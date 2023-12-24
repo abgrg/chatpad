@@ -1,5 +1,5 @@
 {
-    "defaultModel": "gpt-3.5-turbo",
+    "defaultModel": "gpt-3.5-turbo-1106",
     "defaultType": "openai",
     "defaultAuth": "api-key",
     "defaultBase": "",
@@ -7,52 +7,24 @@
     "defaultKey": "",
     "availableModels": [
       {
-        "value": "gpt-3.5-turbo",
-        "label": "GPT-3.5-TURBO (Default ChatGPT)"
-      },
-      {
-        "value": "gpt-3.5-turbo-0613",
-        "label": "GPT-3.5-TURBO-0613"
-      },
-      {
-        "value": "gpt-3.5-turbo-0301",
-        "label": "GPT-3.5-TURBO-0301 (Legacy)"
-      },
-      {
-        "value": "gpt-3.5-turbo-16k",
-        "label": "GPT-3.5-TURBO-16K"
-      },
-      {
-        "value": "gpt-3.5-turbo-16k-0613",
-        "label": "GPT-3.5-TURBO-16K-0613"
-      },
-      {
-        "value": "gpt-4",
-        "label": "GPT-4 (Limited Beta)"
-      },
-      {
-        "value": "gpt-4-0613",
-        "label": "GPT-4-0613 (Limited Beta)"
-      },
-      {
-        "value": "gpt-4-0314",
-        "label": "GPT-4-0314 (Limited Beta, Legacy)"
-      },
-      {
-        "value": "gpt-4-32k",
-        "label": "GPT-4-32K (Limited Beta)"
+        "value": "gpt-3.5-turbo-1106",
+        "label": "GPT-3.5-TURBO (Default ChatGPT)",
+        "price" : 0.0015
       },
       {
         "value": "gpt-4-32k-0613",
-        "label": "GPT-4-32K-0613 (Limited Beta)"
-      },
+        "label": "GPT-4-32K-0613 (Most Expensive, 32K)",
+        "price" : 0.09
+      },      
       {
-        "value": "gpt-4-32k-0314",
-        "label": "GPT-4-32K-0314 (Limited Beta, Legacy)"
+        "value": "gpt-4",
+        "label": "GPT-4(Expensive, 16K)",
+        "price" : 0.045
       },
       {
         "value": "gpt-4-1106-preview",
-        "label": "GPT-4-1106-Preview"
+        "label": "GPT-4-1106 (Recommended 128K)",
+        "price" : 0.015
       }
     ],
     "writingCharacters": [

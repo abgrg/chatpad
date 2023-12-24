@@ -21,6 +21,7 @@ interface Config {
 interface AvailableModel {
     value: string;
     label: string;
+    price: number;
 }
   
 interface WritingCharacter {

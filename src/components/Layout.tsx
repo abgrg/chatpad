@@ -62,6 +62,18 @@ export function Layout() {
     if (!chatId) return null;
     return db.chats.get(chatId);
   }, [chatId]);
+  const settings = useLiveQuery(async () => {
+    return db.settings.where({ id: "general" }).first();
+  });
+  const model = settings ? settings.openAiModel : config.defaultModel;
+  var price = 0.002;
+  config.availableModels.map((availableModel, index) => {
+    // Check if the creature's type is "dragon"
+    if (availableModel.value === model) {
+      // If it is, we return an li element displaying its type.
+      price = availableModel.price;
+    }
+  });
 
   const border = `${rem(1)} solid ${
     theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]
@@ -280,13 +292,15 @@ export function Layout() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                marginRight: "30px",
                 height: "100%",
               }}
             >
-              {`${chat.description} - ${chat.totalTokens ?? 0} tokens ~ $${(
-                ((chat.totalTokens ?? 0) * 0.002) /
-                1000
-              ).toFixed(5)}`}
+              {`${chat.description} - Model: ${model},  ${
+                chat.totalTokens ?? 0
+              } tokens ~ $${(((chat.totalTokens ?? 0) * price) / 1000).toFixed(
+                5
+              )}`}
             </div>
           </Header>
         ) : undefined
